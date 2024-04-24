@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-angular-app';
+  title = 'EPIC Network'
+  links = [
+    { label: 'Mission & Values', url: '/mission' },
+    { label: 'About', url: '/about' },
+    { label: 'Contact Us', url: '/contact' },
+    { label: 'Listserv', url: '/listserv' }
+  ]
 }

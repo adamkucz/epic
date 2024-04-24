@@ -1,9 +1,10 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <a routerLink="/">
-    <img width="60" src="../assets/EPIC logo.webp" alt="EPIC Logo">
+    <img width="60" src="assets/EPIC logo.webp" alt="EPIC Logo">
   </a>
-  <span style="font-size: 20px; color: var(--main-color);">Enhancing Psychosocial Inpatient Care (EPIC)</span>
+  <span style="font-size: 20px; color: var(--main-color);" *ngIf="!lt_md">Enhancing Psychosocial Inpatient Care (EPIC)</span>
+  <span style="font-size: 20px; color: var(--main-color);" *ngIf="lt_md">EPIC</span>
   <div class="spacer"></div>
 
   <ul id="nav-items">

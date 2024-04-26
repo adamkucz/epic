@@ -1,1 +1,29 @@
-<p>contact works!</p>
+
+<div style="display: flex; justify-content: center;">
+    <form id="email-form">
+            <mat-form-field appearance="outline" hideRequiredMarker>
+                 <mat-label>Name</mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+        
+            <mat-form-field appearance="outline" hideRequiredMarker>
+                <mat-label>Email</mat-label>
+               <input matInput type="email">
+            </mat-form-field>
+        
+            <mat-form-field appearance="outline" hideRequiredMarker>
+                <mat-label>Subject</mat-label>
+               <input matInput type="text">
+            </mat-form-field>
+        
+            <mat-form-field appearance="outline">
+                <mat-label>Message</mat-label>
+                <textarea matInput class="email-message" style="height: 150px;"></textarea>
+            </mat-form-field>
+        
+            <button mat-raised-button (click)="sendEmail()"
+            style="width: 100%; background-color: var(--primary-color); color: #edf5ff">
+                Send Email
+            </button>
+    </form>
+</div>

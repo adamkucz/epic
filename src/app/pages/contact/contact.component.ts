@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
 
+  public sendEmail(): void {
+    alert("Nothing happens yet! This is just a placeholder.")
+  }
+
 }

@@ -1,0 +1,14 @@
+
+#email-form {
+    margin-top: 20px;
+    padding-top: 10px;
+    width: 300px;
+}
+
+#email-form > * {
+    width: 100%;
+}
+
+.email-message {
+    resize: none;
+}

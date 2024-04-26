@@ -1,24 +1,38 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <a routerLink="/">
+  <a routerLink="/" (click)="toggleMobileNav()">
     <img width="60" src="assets/EPIC logo.webp" alt="EPIC Logo">
   </a>
-  <a routerLink="/">
-    <span style="font-size: 20px; color: var(--main-color);" *ngIf="!lt_md">Enhancing Psychosocial Inpatient Care (EPIC)</span>
-    <span style="font-size: 20px; color: var(--main-color);" *ngIf="lt_md">EPIC</span>
+  <a routerLink="/" (click)="toggleMobileNav()">
+    <span style="font-size: 20px; color: var(--primary-color);" *ngIf="!lt_md">Enhancing Psychosocial Inpatient Care (EPIC)</span>
+    <span style="font-size: 20px; color: var(--primary-color);" *ngIf="lt_md">EPIC</span>
   </a>
 
   <div class="spacer"></div>
 
-  <ul id="nav-items">
+  <ul *ngIf="gt_sm" id="nav-items">
     <li *ngFor="let link of links">
       <a [routerLink]="link.url">{{ link.label }}</a>
     </li>
   </ul>
 
+  <div *ngIf="lt_md" class="topnav">
+    <span (click)="toggleMobileNav()">
+      <div id="mobile-nav-button" [ngStyle]="{'background-color': showMobileNav ? 'red' : 'green'}"></div>
+    </span>
+  </div>
+
+
 </div>
 
 <div class="content" role="main">
+
+  <!-- Mobile Nav Menu -->
+  <ul *ngIf="showMobileNav && lt_md" id="mobile-nav">
+    <li *ngFor="let link of links">
+      <a [routerLink]="link.url" (click)="toggleMobileNav()">{{ link.label }}</a>
+    </li>
+  </ul>
   
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>

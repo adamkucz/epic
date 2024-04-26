@@ -14,6 +14,8 @@ export class AppComponent {
     { label: 'Listserv', url: '/listserv' }
   ]
 
+  showMobileNav: boolean = false
+
   public xs: boolean = window.innerWidth < 600
   public sm: boolean = window.innerWidth >= 600 && window.innerWidth <= 959
   public md: boolean = window.innerWidth >= 960 && window.innerWidth <= 1279
@@ -37,7 +39,13 @@ export class AppComponent {
 
   @HostListener('window:resize')
   onResize() {
+    
     this.checkScreenSize();
+
+    // If mobile nav is out, then browser is resized > medium, hide mobile nav
+    if(this.gt_sm){
+      this.showMobileNav = false
+    }
   }
 
   private checkScreenSize() {
@@ -58,10 +66,11 @@ export class AppComponent {
     this.gt_md = window.innerWidth >= 1280
     this.gt_lg = window.innerWidth >= 1920
 
-
-
-
   }
-  
+
+  public toggleMobileNav() {
+    this.showMobileNav = !this.showMobileNav
+    console.log(this.showMobileNav)
+  }  
 
 }

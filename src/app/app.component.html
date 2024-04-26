@@ -1,9 +1,9 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <a routerLink="/" (click)="toggleMobileNav()">
+  <a routerLink="/" (click)="toggleMobileNav(); showMobileNav = false;">
     <img width="60" src="assets/EPIC logo.webp" alt="EPIC Logo">
   </a>
-  <a routerLink="/" (click)="toggleMobileNav()">
+  <a routerLink="/" (click)="toggleMobileNav(); showMobileNav = false;">
     <span style="font-size: 20px; color: var(--primary-color);" *ngIf="!lt_md">Enhancing Psychosocial Inpatient Care (EPIC)</span>
     <span style="font-size: 20px; color: var(--primary-color);" *ngIf="lt_md">EPIC</span>
   </a>

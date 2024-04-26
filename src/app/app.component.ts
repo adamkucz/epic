@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -70,7 +71,7 @@ export class AppComponent {
 
   public toggleMobileNav() {
     this.showMobileNav = !this.showMobileNav
-    console.log(this.showMobileNav)
+    console.log("showMobileNav:" + this.showMobileNav)
   }  
 
 }
